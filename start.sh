@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-APPDIR="/apps/nginx"
+# APPDIR="/apps/nginx"
+APPDIR="../nginx"
 PKGNAME="nginx-1.20.0"
 CPU_NUM=$(lscpu | awk -F: '/socket/{print $2}')
 MAKE_OPT="./configure --prefix=${APPDIR} \
