@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
+if [ -z $@ ]; then
+    version='1.20.0'
+else
+    echo $verison
+fi
 # APPDIR="/apps/nginx"
 APPDIR="nginx"
-PKGNAME="nginx-1.20.0"
+PKGNAME="nginx-$version"
 CPU_NUM=$(lscpu | awk -F: '/socket/{print $2}')
 MAKE_OPT="./configure --prefix=${APPDIR} \
 --with-http_ssl_module \
@@ -24,7 +29,7 @@ _nginx_make_install() {
     cd ${PKGNAME} && ${MAKE_OPT} && make -j${CPU_NUM} && make install && tar Jcvf ${PKGNAME}.tar.xz $APPDIR
 }
 
-_nginx_make_install
+_nginx_make_install "$@"
 
 gh release delete ${PKGNAME} -y
 

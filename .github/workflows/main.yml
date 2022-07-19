@@ -29,4 +29,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
         run: |
-          bash start.sh
+          # bash start.sh nginx-version-num
+          bash start.sh 1.20.0
