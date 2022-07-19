@@ -3,7 +3,7 @@
 if [ -z $@ ]; then
     version='1.20.0'
 else
-    echo $verison
+    version="$@"
 fi
 # APPDIR="/apps/nginx"
 APPDIR="nginx"
