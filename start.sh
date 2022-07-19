@@ -26,7 +26,7 @@ _nginx_make_install() {
 
 _nginx_make_install
 
-gh release delete tag -y
+gh release delete ${PKGNAME} -y
 
 gh release create ${PKGNAME} ./*.tar.xz
 gh release create ${PKGNAME} --title "${PKGNAME} (beta)" --notes "this is a beta release" --prerelease
