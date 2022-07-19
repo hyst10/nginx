@@ -18,7 +18,7 @@ _nginx_make_install() {
     wget -c http://nginx.org/download/${PKGNAME}.tar.gz
     apt install bison bison-devel zlib-devel libcurl-devel libarchive-devel boost-devel gcc gcc-c++ cmake ncurses-devel gnutls-devel libxml2-devel openssl-devel libevent-devel libaio-devel -y
     apt install -y vim lrzsz tree screen psmisc lsof tcpdump wget ntpdategcc gcc-c++ glibc glibc-devel pcre pcre-devel openssl openssl-devel systemd-develnet-tools iotop bc zip unzip zlib-devel bash-completion nfs-utils automake libxml2libxml2-devel libxslt libxslt-devel perl perl-ExtUtils-Embed
-    getent passwd nginx | awk -F: '{print $3}' | grep 6000 -q || (userdel nginx && useradd -s /sbin/nologin -u 6000)
+    # getent passwd nginx | awk -F: '{print $3}' | grep 6000 -q || (userdel nginx && useradd -s /sbin/nologin -u 6000)
     tar xf ${PKGNAME}.tar.gz -C /usr/local/src
     cd /usr/local/src/${PKGNAME} && ${MAKE_OPT} && make -j${CPU_NUM} && make install
 }
