@@ -5,8 +5,8 @@ if [ -z $@ ]; then
 else
     version="$@"
 fi
-# APPDIR="/apps/nginx"
-APPDIR="nginx-$version"
+APPDIR="/apps/nginx-$version"
+# APPDIR="nginx-$version"
 PKGNAME="nginx-$version"
 CPU_NUM=$(lscpu | awk -F: '/socket/{print $2}')
 MAKE_OPT="./configure --prefix=${APPDIR} \
