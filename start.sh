@@ -5,7 +5,7 @@ if [ -z $@ ]; then
 else
     version="$@"
 fi
-[ -d /apps ] && mkdir /apps
+[ -d /apps ] || mkdir /apps
 APPDIR="/apps/nginx-$version"
 # APPDIR="nginx-$version"
 PKGNAME="nginx-$version"
