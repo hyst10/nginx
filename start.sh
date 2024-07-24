@@ -19,7 +19,7 @@ MAKE_OPT="./configure --prefix=${APPDIR} \
 --with-pcre \
 --with-stream \
 --with-stream_ssl_module \
---with-cc-opt=-Wno-error -Wno-deprecated-declarations \
+--with-cc-opt=-Wno-deprecated-declarations \
 --with-stream_realip_module"
 
 _nginx_make_install() {
