@@ -20,7 +20,8 @@ MAKE_OPT="./configure --prefix=${APPDIR} \
 --with-stream \
 --with-stream_ssl_module \
 --with-stream_realip_module\
---with-cc-opt="-Wno-error=deprecated-declarations"
+--with-cc-opt="-DNGX_SECURE_MEM -I$OPENSSL_LIB/include \
+    -Wno-error=deprecated-declarations""
 
 _nginx_make_install() {
     wget -c http://nginx.org/download/${PKGNAME}.tar.gz
